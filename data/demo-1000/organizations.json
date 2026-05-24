@@ -1,0 +1,29 @@
+[
+  {
+    "id": "north-lake-youth-symphony",
+    "name": "North Lake Youth Symphony",
+    "location": "Chicago, IL",
+    "type": "Youth orchestra",
+    "summary": "A seasonal youth orchestra program focused on strong ensemble training, sectional coaching, and public performance.",
+    "contactEmail": "auditions@northlakeyouthsymphony.org",
+    "website": "https://example.org/north-lake-youth-symphony"
+  },
+  {
+    "id": "crescendo-opera-studio",
+    "name": "Crescendo Opera Studio",
+    "location": "New York, NY",
+    "type": "Opera training program",
+    "summary": "A studio for emerging vocalists with coaching, staged scenes, diction work, and performance development.",
+    "contactEmail": "apply@crescendooperastudio.org",
+    "website": "https://example.org/crescendo-opera-studio"
+  },
+  {
+    "id": "pulse-contemporary-ensemble",
+    "name": "Pulse Contemporary Ensemble",
+    "location": "Austin, TX",
+    "type": "Contemporary ensemble",
+    "summary": "A project-based ensemble for adventurous musicians working in contemporary, experimental, and cross-genre repertoire.",
+    "contactEmail": "submissions@pulseensemble.org",
+    "website": "https://example.org/pulse-contemporary-ensemble"
+  }
+]

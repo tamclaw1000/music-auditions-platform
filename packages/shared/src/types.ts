@@ -1,6 +1,16 @@
-export type Opportunity = {
+export type Organization = {
   id: string;
-  organizationName: string;
+  name: string;
+  location: string;
+  type: string;
+  summary: string;
+  contactEmail: string;
+  website: string;
+};
+
+export type AuditionEvent = {
+  id: string;
+  organizationId: string;
   title: string;
   location: string;
   deadline: string;
@@ -11,6 +21,8 @@ export type Opportunity = {
   description: string;
   requirements: string[];
 };
+
+export type Opportunity = AuditionEvent;
 
 export type SubmissionEntry = {
   id: string;

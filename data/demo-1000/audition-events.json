@@ -1,0 +1,54 @@
+[
+  {
+    "id": "nlys-2026-season-auditions",
+    "organizationId": "north-lake-youth-symphony",
+    "title": "2026 Season Auditions",
+    "location": "Chicago, IL",
+    "deadline": "2026-07-15",
+    "genre": "Youth orchestra",
+    "instrumentFocus": ["Violin", "Viola", "Cello", "Bass", "Woodwinds"],
+    "auditionCountMin": 2,
+    "auditionCountMax": 3,
+    "description": "Seasonal orchestral auditions for youth musicians with contrasting repertoire and excerpt requirements.",
+    "requirements": ["2 contrasting video submissions", "resume", "guardian contact if under 18"]
+  },
+  {
+    "id": "cos-emerging-vocalist-intake",
+    "organizationId": "crescendo-opera-studio",
+    "title": "Emerging Vocalist Intake",
+    "location": "Remote + New York, NY",
+    "deadline": "2026-08-01",
+    "genre": "Opera",
+    "instrumentFocus": ["Soprano", "Mezzo-Soprano", "Tenor", "Baritone", "Bass"],
+    "auditionCountMin": 1,
+    "auditionCountMax": 2,
+    "description": "Emerging vocalist intake with aria recording, spoken introduction, and language experience.",
+    "requirements": ["1 aria", "1 spoken introduction", "headshot"]
+  },
+  {
+    "id": "pce-project-based-call-2026",
+    "organizationId": "pulse-contemporary-ensemble",
+    "title": "Project-Based Call for Artists",
+    "location": "Austin, TX",
+    "deadline": "2026-06-20",
+    "genre": "Contemporary / experimental",
+    "instrumentFocus": ["Multi-instrumentalist", "Piano", "Percussion", "Electronics"],
+    "auditionCountMin": 2,
+    "auditionCountMax": 4,
+    "description": "A flexible call for musicians comfortable with contemporary repertoire and collaborative development.",
+    "requirements": ["portfolio link", "2 samples", "availability form"]
+  },
+  {
+    "id": "nlys-winter-chamber-fellows",
+    "organizationId": "north-lake-youth-symphony",
+    "title": "Winter Chamber Fellows",
+    "location": "Chicago, IL",
+    "deadline": "2026-09-10",
+    "genre": "Chamber music",
+    "instrumentFocus": ["Strings", "Piano", "Clarinet"],
+    "auditionCountMin": 1,
+    "auditionCountMax": 2,
+    "description": "Small ensemble fellowship for advanced student musicians with coaching and winter performances.",
+    "requirements": ["1 solo video", "short statement of interest"]
+  }
+]
