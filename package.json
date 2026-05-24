@@ -6,6 +6,7 @@
   "scripts": {
     "dev:web": "pnpm --filter web dev",
     "dev:mobile": "pnpm --filter mobile start",
+    "build:web": "pnpm --filter web build",
     "lint": "echo 'lint not configured yet'",
     "typecheck": "echo 'typecheck not configured yet'"
   }

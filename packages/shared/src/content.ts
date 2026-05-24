@@ -1,55 +1,81 @@
+import type { Opportunity } from './types';
+
 export const musicianWorkflow = [
   {
-    title: 'Create a musician profile',
-    description: 'Build one reusable profile with bio, instruments, repertoire, resume, and media links.'
+    title: 'Build one reusable profile',
+    description: 'Save your instrument, bio, location, resume links, and contact details once, then reuse them across applications.'
   },
   {
-    title: 'Browse published opportunities',
-    description: 'Search by organization, instrument, age range, deadline, location, and audition format.'
+    title: 'Browse open opportunities',
+    description: 'Filter by organization, instrument family, genre, location, or deadline to find the right fit quickly.'
   },
   {
-    title: 'Submit one or more auditions',
-    description: 'Upload multiple pieces, label each recording, attach notes, and validate that every requirement is satisfied before submission.'
+    title: 'Submit multiple audition pieces',
+    description: 'Add one or more audition entries with title, composer, duration, link, and notes before sending the full package.'
   },
   {
-    title: 'Track status and next steps',
-    description: 'Receive updates for incomplete, under review, shortlisted, waitlisted, accepted, or declined outcomes.'
+    title: 'Track your status',
+    description: 'See whether each application is draft, submitted, under review, shortlisted, accepted, or declined.'
   }
 ] as const;
 
 export const organizationWorkflow = [
   {
-    title: 'Register an organization',
-    description: 'Create an organization workspace with administrators, contact details, branding, and review settings.'
+    title: 'Register your organization',
+    description: 'Set up administrators, contact information, and a branded opportunity page for prospective musicians.'
   },
   {
-    title: 'Publish submission requirements',
-    description: 'Define programs, eligibility, required documents, required audition count, media format rules, and deadlines.'
+    title: 'Publish clear requirements',
+    description: 'Define eligibility, deadlines, material rules, accepted formats, and the minimum/maximum number of audition submissions.'
   },
   {
-    title: 'Review and shortlist applicants',
-    description: 'Filter by instrument, score auditions, leave comments, collaborate internally, and export candidate lists.'
+    title: 'Review applications efficiently',
+    description: 'Inspect applicant profiles and audition entries in one place, then shortlist candidates for callbacks.'
   },
   {
-    title: 'Communicate decisions',
-    description: 'Send status updates, requests for more material, callback invitations, and acceptance decisions.'
+    title: 'Manage communication',
+    description: 'Keep musicians informed with status updates and next-step messaging throughout the review cycle.'
   }
 ] as const;
 
-export const featuredOrganizations = [
+export const featuredOrganizations: Opportunity[] = [
   {
-    name: 'North Lake Youth Symphony',
-    summary: 'Seasonal orchestral auditions for strings, winds, brass, and percussion with two required contrasting excerpts.',
-    requirements: ['2 video submissions', 'resume', 'guardian contact if under 18']
+    id: 'north-lake-youth-symphony',
+    organizationName: 'North Lake Youth Symphony',
+    title: '2026 Season Auditions',
+    location: 'Chicago, IL',
+    deadline: '2026-07-15',
+    genre: 'Youth orchestra',
+    instrumentFocus: ['Violin', 'Viola', 'Cello', 'Bass', 'Woodwinds'],
+    auditionCountMin: 2,
+    auditionCountMax: 3,
+    description: 'Seasonal orchestral auditions for youth musicians with contrasting repertoire and excerpt requirements.',
+    requirements: ['2 contrasting video submissions', 'resume', 'guardian contact if under 18']
   },
   {
-    name: 'Crescendo Opera Studio',
-    summary: 'Emerging vocalist intake with aria recording, language skills, and performance history.',
+    id: 'crescendo-opera-studio',
+    organizationName: 'Crescendo Opera Studio',
+    title: 'Emerging Vocalist Intake',
+    location: 'Remote + New York, NY',
+    deadline: '2026-08-01',
+    genre: 'Opera',
+    instrumentFocus: ['Soprano', 'Mezzo-Soprano', 'Tenor', 'Baritone', 'Bass'],
+    auditionCountMin: 1,
+    auditionCountMax: 2,
+    description: 'Emerging vocalist intake with aria recording, spoken introduction, and language experience.',
     requirements: ['1 aria', '1 spoken introduction', 'headshot']
   },
   {
-    name: 'Pulse Contemporary Ensemble',
-    summary: 'Project-based call for multi-instrumentalists interested in contemporary and experimental repertoire.',
+    id: 'pulse-contemporary-ensemble',
+    organizationName: 'Pulse Contemporary Ensemble',
+    title: 'Project-Based Call for Artists',
+    location: 'Austin, TX',
+    deadline: '2026-06-20',
+    genre: 'Contemporary / experimental',
+    instrumentFocus: ['Multi-instrumentalist', 'Piano', 'Percussion', 'Electronics'],
+    auditionCountMin: 2,
+    auditionCountMax: 4,
+    description: 'A flexible call for musicians comfortable with contemporary repertoire and collaborative development.',
     requirements: ['portfolio link', '2 samples', 'availability form']
   }
 ] as const;
