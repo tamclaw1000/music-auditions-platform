@@ -28,6 +28,8 @@ input, textarea {
   padding: 12px 14px;
 }
 textarea { resize: vertical; }
+select { font: inherit; }
+.selectInput { width: 100%; margin-top: 8px; border-radius: 12px; border: 1px solid var(--border); background: rgba(7,17,31,0.8); color: var(--text); padding: 12px 14px; }
 label span { display: block; font-size: 0.92rem; color: var(--muted); }
 main { max-width: 1200px; margin: 0 auto; padding: 24px 20px 64px; }
 .topBar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }

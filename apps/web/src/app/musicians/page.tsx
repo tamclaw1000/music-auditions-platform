@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
-import { listAuditionEvents, getOrganizationById } from '../../lib/demo-backend';
+import { useEffect, useMemo, useState } from 'react';
+import { getOrganizationById, listAuditionEvents, listOrganizations } from '../../lib/demo-backend';
 import type { AuditionEvent, MusicianProfile, SubmissionEntry } from '@shared/types';
 
 const emptyProfile: MusicianProfile = {
@@ -24,20 +24,34 @@ function newSubmissionEntry(): SubmissionEntry {
   };
 }
 
+const organizations = listOrganizations();
 const events = listAuditionEvents();
 
 export default function MusiciansPage() {
-  const [selectedEventId, setSelectedEventId] = useState(events[0]?.id ?? '');
+  const [selectedOrganizationId, setSelectedOrganizationId] = useState(organizations[0]?.id ?? '');
+  const [selectedEventId, setSelectedEventId] = useState('');
   const [profile, setProfile] = useState<MusicianProfile>(emptyProfile);
   const [submissions, setSubmissions] = useState<SubmissionEntry[]>([newSubmissionEntry()]);
   const [submittedBanner, setSubmittedBanner] = useState('');
 
-  const selectedEvent = useMemo<AuditionEvent | undefined>(
-    () => events.find((item) => item.id === selectedEventId),
-    [selectedEventId]
+  const filteredEvents = useMemo(
+    () => events.filter((item) => item.organizationId === selectedOrganizationId),
+    [selectedOrganizationId]
   );
 
-  const selectedOrganization = selectedEvent ? getOrganizationById(selectedEvent.organizationId) : undefined;
+  useEffect(() => {
+    const currentStillValid = filteredEvents.some((item) => item.id === selectedEventId);
+    if (!currentStillValid) {
+      setSelectedEventId(filteredEvents[0]?.id ?? '');
+    }
+  }, [filteredEvents, selectedEventId]);
+
+  const selectedEvent = useMemo<AuditionEvent | undefined>(
+    () => filteredEvents.find((item) => item.id === selectedEventId),
+    [filteredEvents, selectedEventId]
+  );
+
+  const selectedOrganization = getOrganizationById(selectedOrganizationId);
   const submissionCountValid = selectedEvent
     ? submissions.length >= selectedEvent.auditionCountMin && submissions.length <= selectedEvent.auditionCountMax
     : false;
@@ -80,7 +94,7 @@ export default function MusiciansPage() {
           <h2>What you can do here</h2>
           <div className="stats">
             <div className="stat"><strong>{events.length}</strong><p>Bootstrapped audition events</p></div>
-            <div className="stat"><strong>1..N</strong><p>Audition entries per submission</p></div>
+            <div className="stat"><strong>{organizations.length}</strong><p>Seed organizations</p></div>
             <div className="stat"><strong>JSON</strong><p>Demo backend source of truth</p></div>
           </div>
         </div>
@@ -94,25 +108,45 @@ export default function MusiciansPage() {
               <h2>Available auditions</h2>
             </div>
           </div>
-          <div className="list">
-            {events.map((event) => {
-              const org = getOrganizationById(event.organizationId);
-              return (
-                <button
-                  key={event.id}
-                  className={`selectCard ${selectedEventId === event.id ? 'selected' : ''}`}
-                  onClick={() => setSelectedEventId(event.id)}
-                  type="button"
-                >
-                  <div>
-                    <strong>{event.title}</strong>
-                    <div className="mutedSmall">{org?.name ?? event.organizationId}</div>
-                  </div>
-                  <div className="mutedSmall">{event.deadline}</div>
-                </button>
-              );
-            })}
+
+          <div className="formGrid" style={{ marginBottom: 16 }}>
+            <label className="full">
+              <span>Organizer</span>
+              <select
+                className="selectInput"
+                value={selectedOrganizationId}
+                onChange={(e) => setSelectedOrganizationId(e.target.value)}
+              >
+                {organizations.map((organization) => (
+                  <option key={organization.id} value={organization.id}>{organization.name}</option>
+                ))}
+              </select>
+            </label>
           </div>
+
+          <div className="list">
+            {filteredEvents.map((event) => (
+              <button
+                key={event.id}
+                className={`selectCard ${selectedEventId === event.id ? 'selected' : ''}`}
+                onClick={() => setSelectedEventId(event.id)}
+                type="button"
+              >
+                <div>
+                  <strong>{event.title}</strong>
+                  <div className="mutedSmall">{selectedOrganization?.name ?? event.organizationId}</div>
+                </div>
+                <div className="mutedSmall">{event.deadline}</div>
+              </button>
+            ))}
+          </div>
+
+          {filteredEvents.length === 0 ? (
+            <div className="listItem" style={{ marginTop: 16 }}>
+              <p>No audition events are currently available for this organizer.</p>
+            </div>
+          ) : null}
+
           {selectedEvent ? (
             <div className="listItem" style={{ marginTop: 16 }}>
               <h3>{selectedEvent.title}</h3>
