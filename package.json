@@ -1,0 +1,12 @@
+{
+  "name": "music-auditions-platform",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "dev:mobile": "pnpm --filter mobile start",
+    "lint": "echo 'lint not configured yet'",
+    "typecheck": "echo 'typecheck not configured yet'"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Music Auditions Platform",
+    "slug": "music-auditions-platform",
+    "scheme": "musicauditions",
+    "platforms": ["ios", "android"],
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark"
+  }
+}
