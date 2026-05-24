@@ -87,3 +87,6 @@ p { color: var(--muted); line-height: 1.6; }
   .topBarLinks { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
   h1 { font-size: 2.4rem; }
 }
+
+.buildMetaFooter { max-width: 1200px; margin: 0 auto; padding: 0 20px 18px; }
+.buildMetaLine { color: var(--muted); font-size: 6pt; line-height: 1.2; opacity: 0.9; text-align: center; }

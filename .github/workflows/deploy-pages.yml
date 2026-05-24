@@ -36,9 +36,15 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build static export
-        run: pnpm --filter web build
-        env:
-          GITHUB_ACTIONS: 'true'
+        run: |
+          APP_VERSION=$(node -p "require('./package.json').version")
+          PUBLISHED_AT=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+          GIT_GUID=$(git rev-parse --short=12 HEAD)
+          GITHUB_ACTIONS='true' \
+          NEXT_PUBLIC_APP_VERSION="$APP_VERSION" \
+          NEXT_PUBLIC_GIT_GUID="$GIT_GUID" \
+          NEXT_PUBLIC_PUBLISHED_AT="$PUBLISHED_AT" \
+          pnpm --filter web build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
