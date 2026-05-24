@@ -70,23 +70,66 @@ export default function HomePage() {
     <main>
       <section className="hero">
         <div className="card">
-          <div className="kicker">Live demo · web first</div>
+          <div className="kicker">Live demo · web + mobile direction</div>
           <h1>Music submissions for musicians and arts organizations.</h1>
           <p>
             This initial version demonstrates the end-to-end shape of the product: organizations publish requirements,
-            musicians browse openings, and applications can include multiple audition submissions.
+            musicians browse openings, and applications can include multiple audition submissions across web and shared mobile screens.
           </p>
           <div className="buttonRow">
             <a className="button primary" href="#apply">Try the musician flow</a>
             <a className="button secondary" href="#publish">Try the organization flow</a>
+            <a className="button secondary" href="#downloads">Mobile downloads</a>
           </div>
         </div>
         <div className="card ctaPanel">
-          <h2>What this first version proves</h2>
+          <h2>What this version proves</h2>
           <div className="stats">
             <div className="stat"><strong>Browse</strong><p>Opportunity discovery with requirement visibility</p></div>
             <div className="stat"><strong>Submit</strong><p>Multi-audition application composition</p></div>
             <div className="stat"><strong>Publish</strong><p>Organization intake for new opportunity drafts</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="downloads" className="card" style={{ marginTop: 24 }}>
+        <div className="sectionHeader">
+          <div>
+            <div className="kicker">Downloads</div>
+            <h2>Web and mobile distribution</h2>
+          </div>
+        </div>
+        <div className="grid">
+          <div className="listItem">
+            <h3>Live web demo</h3>
+            <p>Try the published website immediately.</p>
+            <div className="buttonRow">
+              <a className="button primary" href="https://tamclaw1000.github.io/music-auditions-platform/" target="_blank" rel="noreferrer">Open website</a>
+            </div>
+          </div>
+          <div className="listItem">
+            <h3>Mobile source package</h3>
+            <p>Current mobile app source, including dedicated musician and organization screens, is available in the GitHub repository.</p>
+            <div className="buttonRow">
+              <a className="button secondary" href="https://github.com/tamclaw1000/music-auditions-platform/archive/refs/heads/main.zip" target="_blank" rel="noreferrer">Download source ZIP</a>
+              <a className="button secondary" href="https://github.com/tamclaw1000/music-auditions-platform/tree/main/apps/mobile" target="_blank" rel="noreferrer">View mobile app source</a>
+            </div>
+          </div>
+          <div className="listItem">
+            <h3>Android preview build</h3>
+            <p>Build pipeline prepared with Expo/EAS config. Installable preview artifact is pending Expo authentication and Android signing/build execution.</p>
+            <div className="chips">
+              <span className="chip">Status: pipeline prepared</span>
+              <span className="chip">Next: run EAS preview build</span>
+            </div>
+          </div>
+          <div className="listItem">
+            <h3>iPhone preview build</h3>
+            <p>TestFlight-ready flow is prepared conceptually, but publishing requires Apple signing credentials plus Expo/EAS project setup.</p>
+            <div className="chips">
+              <span className="chip">Status: waiting on signing</span>
+              <span className="chip">Next: EAS + App Store Connect</span>
+            </div>
           </div>
         </div>
       </section>

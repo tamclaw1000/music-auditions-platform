@@ -2,9 +2,22 @@
   "expo": {
     "name": "Music Auditions Platform",
     "slug": "music-auditions-platform",
+    "version": "0.2.0",
     "scheme": "musicauditions",
     "platforms": ["ios", "android"],
     "orientation": "portrait",
-    "userInterfaceStyle": "dark"
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tamclaw.musicauditions"
+    },
+    "android": {
+      "package": "com.tamclaw.musicauditions"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "pending-create-on-first-eas-init"
+      }
+    }
   }
 }

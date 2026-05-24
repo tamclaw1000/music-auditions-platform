@@ -4,10 +4,7 @@ A cross-platform product for musicians to discover opportunities, register with 
 
 ## Live demo
 
-After GitHub Pages deployment is enabled, the initial web app is published from this repository's `main` branch workflow.
-
-Expected URL:
-- `https://tamclaw1000.github.io/music-auditions-platform/`
+- Website: `https://tamclaw1000.github.io/music-auditions-platform/`
 
 ## Apps
 
@@ -16,23 +13,38 @@ Expected URL:
 - `packages/shared` — shared TypeScript types and demo content
 - `Planning` — requirements and implementation plan
 
-## What the first version includes
+## What is live now
 
-### Musician experience
-- Browse published opportunities
-- Inspect submission requirements
-- Fill out a musician profile
-- Add one or more audition submissions
-- Validate whether an application is ready
+### Web
+- Published on GitHub Pages
+- Includes musician browse/application demo flow
+- Includes organization requirement draft flow
+- Includes a downloads section for web/mobile distribution status
 
-### Organization experience
-- Draft organization registration details
-- Draft submission requirement details for a program/opportunity
-- Preview what a published requirement could look like
+### Mobile
+- Shared Expo React Native application
+- Dedicated screens for:
+  - home
+  - musicians
+  - organizations
+- Prepared for future video recording/upload flows
 
-### Mobile direction
-- Initial Expo app shell with mirrored product framing for iPhone and Android
-- Ready for expansion into full mobile submission and review flows
+## Mobile distribution status
+
+### Ready now
+- Mobile source code download:
+  - `https://github.com/tamclaw1000/music-auditions-platform/archive/refs/heads/main.zip`
+
+### Prepared but not yet built in this environment
+- `eas.json` added for Expo Application Services builds
+- iOS bundle identifier configured
+- Android package identifier configured
+
+### Current blockers for installable iOS/Android builds
+- Expo/EAS CLI not installed/authenticated here
+- No `EXPO_TOKEN` configured
+- No Apple signing/TestFlight credentials configured
+- No Android signing/build execution configured yet
 
 ## Local development
 
@@ -42,6 +54,19 @@ pnpm dev:web
 pnpm dev:mobile
 ```
 
+## Next mobile publish steps
+
+```bash
+npm install -g eas-cli
+expo login
+cd apps/mobile
+# or from repo root with proper app ownership configured
+
+eas build --platform android --profile preview
+eas build --platform ios --profile preview
+```
+
 ## Deployment
 
-A GitHub Actions workflow in `.github/workflows/deploy-pages.yml` builds the static Next.js app and deploys it to GitHub Pages.
+- Web deploys automatically through GitHub Actions to GitHub Pages
+- Mobile build pipeline is prepared for Expo EAS once credentials are available
