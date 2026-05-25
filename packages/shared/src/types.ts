@@ -41,6 +41,24 @@ export type MusicianProfile = {
   bio: string;
 };
 
+export type MusicianRegistrationStatus = 'registered' | 'uploading' | 'ready';
+
+export type MusicianRegistration = {
+  auditionEventId: string;
+  registeredAt: string;
+  status: MusicianRegistrationStatus;
+  tapes: SubmissionEntry[];
+};
+
+export type DemoMusicianAccount = {
+  id: string;
+  email: string;
+  passwordHint: string;
+  stageLabel: string;
+  profile: MusicianProfile;
+  registrations: MusicianRegistration[];
+};
+
 export type OrganizationDraft = {
   organizationName: string;
   contactName: string;

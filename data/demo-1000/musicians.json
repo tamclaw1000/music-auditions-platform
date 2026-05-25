@@ -1,0 +1,105 @@
+[
+  {
+    "id": "maya-chen",
+    "email": "maya.chen@example.com",
+    "passwordHint": "demo-pass-1000",
+    "stageLabel": "Profile created, no auditions yet",
+    "profile": {
+      "fullName": "Maya Chen",
+      "email": "maya.chen@example.com",
+      "primaryInstrument": "Violin",
+      "city": "Evanston, IL",
+      "bio": "High school violinist preparing first prescreen submissions for youth orchestra programs."
+    },
+    "registrations": []
+  },
+  {
+    "id": "leo-martinez",
+    "email": "leo.martinez@example.com",
+    "passwordHint": "demo-pass-1000",
+    "stageLabel": "Registered for an audition, tapes not uploaded",
+    "profile": {
+      "fullName": "Leo Martinez",
+      "email": "leo.martinez@example.com",
+      "primaryInstrument": "Cello",
+      "city": "Chicago, IL",
+      "bio": "Student cellist focused on chamber and orchestral auditions for the 2026 season."
+    },
+    "registrations": [
+      {
+        "auditionEventId": "nlys-2026-season-auditions",
+        "registeredAt": "2026-05-12",
+        "status": "registered",
+        "tapes": []
+      }
+    ]
+  },
+  {
+    "id": "amina-rahman",
+    "email": "amina.rahman@example.com",
+    "passwordHint": "demo-pass-1000",
+    "stageLabel": "Mid-upload with one tape already saved",
+    "profile": {
+      "fullName": "Amina Rahman",
+      "email": "amina.rahman@example.com",
+      "primaryInstrument": "Soprano",
+      "city": "Brooklyn, NY",
+      "bio": "Emerging soprano building prescreen materials for training programs and studio auditions."
+    },
+    "registrations": [
+      {
+        "auditionEventId": "cos-emerging-vocalist-intake",
+        "registeredAt": "2026-05-18",
+        "status": "uploading",
+        "tapes": [
+          {
+            "id": "tape-amina-1",
+            "pieceTitle": "Vedrai, carino",
+            "composer": "Mozart",
+            "duration": "03:41",
+            "link": "https://example.org/media/amina-vedrai-carino",
+            "notes": "Italian aria take 2 with piano accompaniment."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "samir-kapoor",
+    "email": "samir.kapoor@example.com",
+    "passwordHint": "demo-pass-1000",
+    "stageLabel": "Upload set complete and ready for review",
+    "profile": {
+      "fullName": "Samir Kapoor",
+      "email": "samir.kapoor@example.com",
+      "primaryInstrument": "Percussion",
+      "city": "Austin, TX",
+      "bio": "Contemporary percussionist submitting project samples for collaborative ensemble calls."
+    },
+    "registrations": [
+      {
+        "auditionEventId": "pce-project-based-call-2026",
+        "registeredAt": "2026-05-09",
+        "status": "ready",
+        "tapes": [
+          {
+            "id": "tape-samir-1",
+            "pieceTitle": "Metal Study No. 2",
+            "composer": "Samir Kapoor",
+            "duration": "04:12",
+            "link": "https://example.org/media/samir-metal-study-2",
+            "notes": "Solo multi-percussion setup, filmed in rehearsal room."
+          },
+          {
+            "id": "tape-samir-2",
+            "pieceTitle": "Pulse Session Excerpt",
+            "composer": "Collective improvisation",
+            "duration": "05:08",
+            "link": "https://example.org/media/samir-pulse-session",
+            "notes": "Ensemble collaboration clip showing electronics + percussion cues."
+          }
+        ]
+      }
+    ]
+  }
+]
